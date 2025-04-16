@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walton & Carmine — Invite Only</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Cinzel', serif;
+      background: url('images/background-lock.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .lock-screen {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    }
+
+    .lock-screen h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .lock-screen input[type="password"] {
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .lock-screen button {
+      padding: 10px 30px;
+      font-size: 18px;
+      background-color: gold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .lock-screen button:hover {
+      background-color: #d4af37;
+    }
+  </style>
+</head>
+<body>
+  <div class="lock-screen">
+    <h1>Invite Code</h1>
+    <input type="password" id="invite-code" placeholder="Enter your code">
+    <br>
+    <button onclick="checkCode()">Enter</button>
+  </div>
+
+  <script>
+    function checkCode() {
+      const code = document.getElementById('invite-code').value;
+      if (code.toLowerCase() === 'venus') {
+        window.location.href = 'home.html';
+      } else {
+        alert('Incorrect invite code. Try again.');
+      }
+    }
+  </script>
+</body>
+</html>
